@@ -28,11 +28,16 @@ public class StepDefinitions {
 
 
     @Given("launch swag labs demo site")
-    public void launchSwagLabsDemoSite() {
+    public void launchSwagLabsDemoSite() throws IOException {
 
         driver.get("https://www.saucedemo.com/");
         System.out.println("Text  : "+ driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[1]")).getSize());
         System.out.println("cucumber setup is successful");
+        /*if( driver.getTitle().equals("Swag Labs")){
+            System.out.println("Screenshot method");
+            File scrnsht = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrnsht,new File("src\\test\\resources\\reports\\evidence.png"));
+        }*/
 
     }
 
@@ -56,7 +61,7 @@ public class StepDefinitions {
     public void readAndRunExcelData() throws IOException {
         keyDrivenFramework.readAndExecuteExcelData();
     }
- //  @Test(dataProvider = "loginData", dataProviderClass = TestngAnnotations.class)
+   //@Test(dataProvider = "loginData", dataProviderClass = TestngAnnotations.class)
     public void testLogin(String username, String password) throws IOException {
         // Perform login test
         WebElement usernameField = driver.findElement(By.id("username"));
@@ -83,10 +88,7 @@ public class StepDefinitions {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("dynamicElement")));
 
 
-       // Assert.assertEquals(loginMessage.getText(), expectedMessage, "Login failed for user: " + username);
     }
-
-
 
 
 

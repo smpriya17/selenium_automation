@@ -3,8 +3,8 @@
 
     Scenario Outline: log in
       Given launch swag labs demo site
-      When I enter username and password
-      Then click login
+     # When I enter "<userName>" and "<password>"
+     # Then click login
       Examples:
       |userName|password|
      |standard_user|secret_sauce|

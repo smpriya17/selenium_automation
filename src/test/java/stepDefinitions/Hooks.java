@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 public class Hooks {
     public static WebDriver driver;
 
-   // @Before
+    @Before
     public void setUp() {
         String browser = System.getProperty("browser", "edge");
         System.out.println("Hooks class");// Default to Chrome

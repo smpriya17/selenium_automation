@@ -3,7 +3,7 @@ package stepDefinitions;
 import org.testng.annotations.*;
 
 public class TestngAnnotations {
-    // @Test
+    //@Test
     public void test1() {
         System.out.println("Test Case 1");
     }

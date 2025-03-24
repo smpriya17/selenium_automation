@@ -28,10 +28,19 @@ dependencies {
 
 }
 
+
+
+
 test {
     useJUnitPlatform()
    // useTestNG(){
-     //   suites 'testng.xml'
+    //  suites 'testng.xml'
     //}
     systemProperty "browser", System.getProperty("browser", "chrome")
+
+}
+tasks.register('generateCucumberReports', JavaExec) {
+    mainClass = 'stepDefinitions.ReportGenerator'  // Update with your package name
+    classpath = sourceSets.test.runtimeClasspath
+    dependsOn test
 }

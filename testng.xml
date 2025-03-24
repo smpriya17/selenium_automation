@@ -1,2 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/Users/NAJINI ZAHIRHUSSAIN/Documents/smp/selenium_automation/src/test/java/stepDefinitions/TestngTest.java"><classes><class name="stepDefinitions.TestngTest"><methods><include name="loginPageTitleTest"/></methods></class></classes></test></suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="methods" thread-count="2">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/NAJINI ZAHIRHUSSAIN/Documents/smp/selenium_automation/src/test/java/stepDefinitions/TestngTest.java">
+        <classes>
+            <class name="stepDefinitions.TestngTest">
+                <methods>
+                    <include name="loginPageTitleTest"/>
+                    <include name="login"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="sample">
+        <classes>
+            <class name="stepDefinitions.TestngAnnotations">
+                <methods>
+                    <include name="test1">
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
